@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Ticket de Compra</h1>
+  <div class="ticket-info">
+    <p><strong>Fecha y Hora de Compra:</strong> {{purchaseDateTime}}</p>
+    <p><strong>Total de la Compra:</strong> {{totalAmount}}</p>
+    <p><strong>Productos Comprados:</strong></p>
+    <ul class="product-list">
+      {{#each products}}
+        <li class="product-item">
+          <p><strong>Producto:</strong> {{this.name}}</p>
+          <p><strong>Cantidad:</strong> {{this.quantity}}</p>
+          <p><strong>Precio Unitario:</strong> {{this.price}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

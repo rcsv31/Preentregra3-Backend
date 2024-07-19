@@ -1,0 +1,43 @@
+<h1>Real Time Products</h1>
+<h2>Productos actualizados en tiempo real</h2>
+
+<div id="productsContainer">
+  {{#each products}}
+    <div class="card">
+      <img
+        src="{{this.thumbnail}}"
+        alt="{{this.title}}"
+        class="product-image"
+      />
+      <p>{{this.title}}</p>
+      <p>{{this.description}}</p>
+      <p>{{this.price}}</p>
+      <p>{{this.code}}</p>
+      <p>{{this.stock}}</p>
+      <p>{{this.id}}</p>
+      <p>{{this.category}}</p>
+      <p>{{this._id}}</p>
+    </div>
+  {{/each}}
+</div>
+
+<h2>AGREGAR PRODUCTOS</h2>
+<div class="formContainer">
+  <form action="" class="formulario">
+    <input type="text" id="title" placeholder="Titulo" />
+    <input type="text" id="description" placeholder="Descripción" />
+    <input type="number" id="price" placeholder="Precio" />
+    <input type="text" id="img" value="sin imagen" />
+    <input type="text" id="code" placeholder="Codigo" />
+    <input type="Number" id="stock" placeholder="Stock" />
+    <input type="text" id="category" placeholder="Categoria" />
+    <select name="" id="status">
+      <option value="true">Activo</option>
+      <option value="false">Inactivo</option>
+    </select>
+    <button type="button" id="btnEnviar">Enviar</button>
+  </form>
+</div>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/main.js"></script>

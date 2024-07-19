@@ -1,0 +1,12 @@
+<div class="form-container">
+  <h1>Mi perfil</h1>
+  <div class="profile-info">
+    <p><strong>Nombre:</strong> {{user.first_name}}</p>
+    <p><strong>Apellido:</strong> {{user.last_name}}</p>
+    <p><strong>Email:</strong> {{user.email}}</p>
+    <p><strong>Edad:</strong> {{user.age}}</p>
+    <p><strong>Cart ID:</strong>
+      <a href="/api/carts/{{user.cart}}">{{user.cart}}</a></p>
+  </div>
+  <a href="/api/sessions/logout" class="button">Logout</a>
+</div>

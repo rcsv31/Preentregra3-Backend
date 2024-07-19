@@ -1,0 +1,35 @@
+<div class="headerContainer">
+    <h1>Home</h1>
+    <button onclick="window.location.href='/api/sessions/logout'" class="btn">Cerrar sesión</button>
+</div>
+
+<div id="productsContainer">
+    {{#each products.docs}}
+    <div class="card">
+        <img src="{{this.product.thumbnail.[0]}}" alt="{{this.product.title}}" class="product-image">
+        <p>{{this.title}}</p>
+        <p>$ {{this.price}}</p>
+        <p>{{this.category}}</p>
+        <div>
+            <button class="btn" onclick="/api/carts/{{../user.cart._id}}/product/{{this._id}}">Agregar al
+                carrito</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<div>
+    {{#if products.hasPrevPage}}
+    <a href="?page={{products.prevPage}}">Aterior</a>
+    {{/if}}
+
+    {{#each products.pagesInRange}}
+    <a href="?page={{this}}">{{this}}</a>
+    {{/each}}
+
+    {{#if products.hasNextPage}}
+    <a href="?page={{products.nextPage}}">NextPage</a>
+    {{/if}}
+</div>
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/main.js"></script>
